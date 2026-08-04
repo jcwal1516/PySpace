@@ -116,6 +116,12 @@ def test_security_audit_uses_a_patched_build_toolchain() -> None:
     assert 'python -m pip install --upgrade pip "setuptools>=83"' in workflow
 
 
+def test_repository_preserves_manifest_bytes_across_platforms() -> None:
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8").splitlines()
+
+    assert "* text=auto eol=lf" in attributes
+
+
 def test_examples_execute_without_external_data(tmp_path: Path) -> None:
     for filename in ("table_workflow.py", "image_workflow.py", "safe_bundle.py"):
         namespace = runpy.run_path(str(ROOT / "examples" / filename))

@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "bytes": 19,
+      "path": ".gitattributes",
+      "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
+    },
+    {
       "bytes": 197,
       "path": ".github/dependabot.yml",
       "sha256": "dbca43d3a012b92e911cf3cf6734b721a7f5c0040b4883c12af59bb29deb5ec3"
@@ -83,7 +88,7 @@
     {
       "bytes": 3308,
       "path": "RELEASE_VERIFICATION.md",
-      "sha256": "f04935f7f40fa0ca115c23fb82bb823b8115ec8798026c4ce230c5fb0af5275e"
+      "sha256": "917449b2c29a35da2cc83cbda58dfa91c9f06090182dc2b75b77074754e9ac3d"
     },
     {
       "bytes": 573,
@@ -661,9 +666,9 @@
       "sha256": "24b08598bf17a004f998b4d1389924ad21e150377f11af3419e6bccd162d20d7"
     },
     {
-      "bytes": 6995,
+      "bytes": 7201,
       "path": "tests/test_release_artifacts.py",
-      "sha256": "eb6a3bc592952d50a9e3ecb819e4d4749395d872237da74251fe5228a6fa013f"
+      "sha256": "bdae99bb82428d7c59d6df9aa681891c45b815bc148d122245edb98140493db7"
     },
     {
       "bytes": 2105,
