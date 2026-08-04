@@ -11,9 +11,9 @@
       "sha256": "dbca43d3a012b92e911cf3cf6734b721a7f5c0040b4883c12af59bb29deb5ec3"
     },
     {
-      "bytes": 2426,
+      "bytes": 2457,
       "path": ".github/workflows/ci.yml",
-      "sha256": "343ba4c50defaf29a10aefebced77e94610b0c598eb2a8a28063610e2e5092fa"
+      "sha256": "b2fec454ee2473ca210f3e4c2ff93cade30b503609b30671c82acb219116294a"
     },
     {
       "bytes": 655,
@@ -88,7 +88,7 @@
     {
       "bytes": 3308,
       "path": "RELEASE_VERIFICATION.md",
-      "sha256": "917449b2c29a35da2cc83cbda58dfa91c9f06090182dc2b75b77074754e9ac3d"
+      "sha256": "50c6fcfb4461ced0b227e2db65f323642ceead9c751c205c78ef6d0dc8d2aa2c"
     },
     {
       "bytes": 573,
@@ -211,9 +211,9 @@
       "sha256": "713a81a2fa44b229d8233b96bca2c3b1d6091ee88f4b519d05329807f131d38f"
     },
     {
-      "bytes": 2460,
+      "bytes": 2571,
       "path": "scripts/check_kernel_coverage.py",
-      "sha256": "c6d60d18d542d40051182b367b45d1113921d6452aa520037b0077288e5df4fc"
+      "sha256": "aa25efdf47becd2b053e4f1ee8daca928727cb8ee1f233a696b66bc0ebfa7d93"
     },
     {
       "bytes": 6518,
@@ -666,9 +666,9 @@
       "sha256": "24b08598bf17a004f998b4d1389924ad21e150377f11af3419e6bccd162d20d7"
     },
     {
-      "bytes": 7201,
+      "bytes": 7415,
       "path": "tests/test_release_artifacts.py",
-      "sha256": "bdae99bb82428d7c59d6df9aa681891c45b815bc148d122245edb98140493db7"
+      "sha256": "b013348ed5de71974a10159144d32491cfe58d433fa5a98f5d6456722212d528"
     },
     {
       "bytes": 2105,

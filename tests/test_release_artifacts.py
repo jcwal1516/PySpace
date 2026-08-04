@@ -106,6 +106,7 @@ def test_ci_typechecks_once_with_the_minimum_supported_python() -> None:
     assert "if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'" in workflow
     assert workflow.count("python -m mypy src tests scripts benchmarks examples") == 1
     assert '-m "not live_r"' in workflow
+    assert "MPLBACKEND: Agg" in workflow
 
 
 def test_security_audit_uses_a_patched_build_toolchain() -> None:
@@ -144,6 +145,8 @@ def test_kernel_coverage_combines_lines_and_branches_and_requires_every_file() -
     }
 
     assert kernel_coverage(report, ("a.py",)) == 90.0
+    windows_report = {"files": {r"src\pyspace\core\census.py": report["files"]["a.py"]}}
+    assert kernel_coverage(windows_report, ("src/pyspace/core/census.py",)) == 90.0
     try:
         kernel_coverage(report, ("missing.py",))
     except ValueError as error:

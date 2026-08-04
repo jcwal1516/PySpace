@@ -30,14 +30,15 @@ def kernel_coverage(report: dict[str, Any], files: tuple[str, ...] = KERNEL_FILE
     coverage_files = report.get("files")
     if not isinstance(coverage_files, dict):
         raise ValueError("Coverage report has no files object")
-    missing = [path for path in files if path not in coverage_files]
+    normalized_files = {str(path).replace("\\", "/"): details for path, details in coverage_files.items()}
+    missing = [path for path in files if path not in normalized_files]
     if missing:
         raise ValueError(f"Coverage report is missing kernel files: {', '.join(missing)}")
 
     covered = 0
     total = 0
     for path in files:
-        summary = coverage_files[path].get("summary")
+        summary = normalized_files[path].get("summary")
         if not isinstance(summary, dict):
             raise ValueError(f"Coverage report has no summary for {path}")
         covered += int(summary["covered_lines"]) + int(summary["covered_branches"])
