@@ -11,24 +11,24 @@
       "sha256": "dbca43d3a012b92e911cf3cf6734b721a7f5c0040b4883c12af59bb29deb5ec3"
     },
     {
-      "bytes": 2457,
+      "bytes": 2469,
       "path": ".github/workflows/ci.yml",
-      "sha256": "b2fec454ee2473ca210f3e4c2ff93cade30b503609b30671c82acb219116294a"
+      "sha256": "47678155c765a0fa07f37a0a961632abef93357e6852dbc3ffedf5233715441d"
     },
     {
-      "bytes": 655,
+      "bytes": 659,
       "path": ".github/workflows/community.yml",
-      "sha256": "230fe29f52d53e2610bc061e23598bbdb539ebf9604cc2e0fe75250aeb229f50"
+      "sha256": "b67a147da7a156d00b77adefd136119d323bfb9c9a4e5769a484ac2a2445c77c"
     },
     {
-      "bytes": 1290,
+      "bytes": 1298,
       "path": ".github/workflows/live-r-parity.yml",
-      "sha256": "dd3f0a4d840f6a29f4ece20e02c366a205fbcc1fdbb5e9ecfb44c91ac370595b"
+      "sha256": "2f68e0ba0e1254f544ddb6bf2b52a5e4c613f14b6f608900d2b8b9ac4a9cbcc0"
     },
     {
-      "bytes": 1699,
+      "bytes": 1711,
       "path": ".github/workflows/security.yml",
-      "sha256": "f10986e4d4da1faaff7e5fa14addddc42a40bff8f558c5d079ba9665da26c332"
+      "sha256": "0ea04afb61628fbcd99d309cb1206856b50d96cbe2adc56822d173f033cef0e3"
     },
     {
       "bytes": 354,
