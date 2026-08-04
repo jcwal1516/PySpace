@@ -1,0 +1,210 @@
+{
+  "summary": {
+    "total": 40,
+    "passed": 40,
+    "failed": 0,
+    "score": 1.0
+  },
+  "checks": [
+    {
+      "name": "upstream::commit",
+      "passed": true,
+      "detail": "94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8"
+    },
+    {
+      "name": "upstream::pristine",
+      "passed": true,
+      "detail": "clean"
+    },
+    {
+      "name": "r_exports_mapped",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "no_stale_mappings",
+      "passed": true,
+      "detail": "ok"
+    },
+    {
+      "name": "symbol::alpha_diversity",
+      "passed": true,
+      "detail": "pyspace.alpha_diversity is callable"
+    },
+    {
+      "name": "symbol::beta_diversity",
+      "passed": true,
+      "detail": "pyspace.beta_diversity is callable"
+    },
+    {
+      "name": "symbol::calc_vol",
+      "passed": true,
+      "detail": "pyspace.calc_vol is callable"
+    },
+    {
+      "name": "symbol::calc_vols",
+      "passed": true,
+      "detail": "pyspace.calc_vols is callable"
+    },
+    {
+      "name": "symbol::census_image",
+      "passed": true,
+      "detail": "pyspace.census_image is callable"
+    },
+    {
+      "name": "symbol::census_table",
+      "passed": true,
+      "detail": "pyspace.census_table is callable"
+    },
+    {
+      "name": "symbol::learn_pattern",
+      "passed": true,
+      "detail": "pyspace.learn_pattern is callable"
+    },
+    {
+      "name": "symbol::load_image",
+      "passed": true,
+      "detail": "pyspace.load_image is callable"
+    },
+    {
+      "name": "symbol::load_table",
+      "passed": true,
+      "detail": "pyspace.load_table is callable"
+    },
+    {
+      "name": "symbol::make_palette",
+      "passed": true,
+      "detail": "pyspace.make_palette is callable"
+    },
+    {
+      "name": "symbol::map_pattern",
+      "passed": true,
+      "detail": "pyspace.map_pattern is callable"
+    },
+    {
+      "name": "symbol::measure_cisMI",
+      "passed": true,
+      "detail": "pyspace.measure_cisMI is callable"
+    },
+    {
+      "name": "symbol::measure_transMI",
+      "passed": true,
+      "detail": "pyspace.measure_transMI is callable"
+    },
+    {
+      "name": "symbol::merge_objects",
+      "passed": true,
+      "detail": "pyspace.merge_objects is callable"
+    },
+    {
+      "name": "symbol::patch_3D",
+      "passed": true,
+      "detail": "pyspace.patch_3D is callable"
+    },
+    {
+      "name": "symbol::plot_MI_radius",
+      "passed": true,
+      "detail": "pyspace.plot_MI_radius is callable"
+    },
+    {
+      "name": "symbol::plot_MI_rank",
+      "passed": true,
+      "detail": "pyspace.plot_MI_rank is callable"
+    },
+    {
+      "name": "symbol::plot_dist",
+      "passed": true,
+      "detail": "pyspace.plot_dist is callable"
+    },
+    {
+      "name": "symbol::plot_image",
+      "passed": true,
+      "detail": "pyspace.plot_image is callable"
+    },
+    {
+      "name": "symbol::plot_palette",
+      "passed": true,
+      "detail": "pyspace.plot_palette is callable"
+    },
+    {
+      "name": "symbol::plot_table",
+      "passed": true,
+      "detail": "pyspace.plot_table is callable"
+    },
+    {
+      "name": "symbol::standardize_censuses",
+      "passed": true,
+      "detail": "pyspace.standardize_censuses is callable"
+    },
+    {
+      "name": "symbol::suggest_number",
+      "passed": true,
+      "detail": "pyspace.suggest_number is callable"
+    },
+    {
+      "name": "symbol::suggest_radii",
+      "passed": true,
+      "detail": "pyspace.suggest_radii is callable"
+    },
+    {
+      "name": "core_oracle::upstream_commit",
+      "passed": true,
+      "detail": "upstream_commit=94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8"
+    },
+    {
+      "name": "core_oracle::utils.json",
+      "passed": true,
+      "detail": "sha256=1d0c233f4f9b78473849b1c1ad636425f796fd5b602a30a7770375a1251ed371"
+    },
+    {
+      "name": "core_oracle::round_column.csv",
+      "passed": true,
+      "detail": "sha256=2529abfb858b2bda5a2370f5ef2eb25a8a619f3409a7fe8b3f8a086927e3e1cb"
+    },
+    {
+      "name": "core_oracle::build_dist_2d.csv",
+      "passed": true,
+      "detail": "sha256=43ed582d4508ae8f6deeaa27fd7e6660d39d0dc097255d89521e85400e595520"
+    },
+    {
+      "name": "core_oracle::smooth_dist_1d.csv",
+      "passed": true,
+      "detail": "sha256=dc5408bcd90c46a3c8048645f540fa909ea71cf968386d53b68e6e016ae118d4"
+    },
+    {
+      "name": "core_oracle::smooth_dist_2d.csv",
+      "passed": true,
+      "detail": "sha256=ff27bfe6182db5f59f071feaebdcbf86e11f6804ad66c2cbec9e89858fef1e59"
+    },
+    {
+      "name": "core_oracle::smooth_dist_2d_freq.csv",
+      "passed": true,
+      "detail": "sha256=430c1139ae136b74b10a812c24b133832a054653fd01bcd2c483b5c542361433"
+    },
+    {
+      "name": "core_oracle::summarize_patches.csv",
+      "passed": true,
+      "detail": "sha256=799c84af309806ac74f77da15984d51d8570eae5ba4dc48b7a2d606bc3da096b"
+    },
+    {
+      "name": "core_oracle::random_census.csv",
+      "passed": true,
+      "detail": "sha256=ea969016e4320978d9b6113ee931b956d987df718947ac041fd3e70286ecede2"
+    },
+    {
+      "name": "core_oracle::census_table_r_style.csv",
+      "passed": true,
+      "detail": "sha256=ef839982300cbfd188b2da2bd87928e5c0c09be0b741b57c8812c39df71de9e0"
+    },
+    {
+      "name": "core_oracle::cismi_1.1.csv",
+      "passed": true,
+      "detail": "sha256=e068b22dfb5f9876ff0df013f5bd3cdd6ca71b066177dff11771cf817dd88087"
+    },
+    {
+      "name": "core_oracle::transmi_1.1.csv",
+      "passed": true,
+      "detail": "sha256=4d2a0a50be848251852437144344f2da7176a1be27e95e6347ad9854aa742e6c"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+PySpace
+Copyright 2026 PySpace contributors
+
+This product includes a Python implementation derived from the concepts and
+algorithms in SPACE: Spatial Patterning Analysis of Cellular Ensembles.
+
+Original SPACE project and R implementation:
+Copyright Edward Schrom and contributors
+https://github.com/eschrom/SPACE
+
+PySpace pins scientific compatibility to SPACE commit
+94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8.
+
+Optional community-detection dependencies use GPL-2.0-or-later or
+GPL-3.0-or-later terms. They are not installed by the base package; see
+THIRD_PARTY_LICENSES.md.

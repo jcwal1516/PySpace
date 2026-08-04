@@ -1,0 +1,47 @@
+site_name: PySpace 0.1.0
+site_description: Python implementation of Spatial Patterning Analysis of Cellular Ensembles
+repo_name: jcwal1516/PySpace
+repo_url: https://github.com/jcwal1516/PySpace
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - content.code.copy
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: true
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+nav:
+  - Overview: index.md
+  - Installation: installation.md
+  - Quick start: quickstart.md
+  - Examples: examples.md
+  - R parity:
+      - R-to-Python map: r-to-python.md
+      - Methodology and report: parity.md
+      - Reproducibility: reproducibility.md
+  - Reference:
+      - Python API: api.md
+      - CLI: cli.md
+      - Result bundles: result-bundles.md
+  - Release evidence:
+      - Data policy: data-policy.md
+      - AI-slop audit: ai-slop-audit.md
+      - Security: security.md
+      - Benchmarks: benchmark-results.md
+extra:
+  version:
+    provider: mike
+    default: "0.1.0"
+strict: true
