@@ -22,5 +22,5 @@ def test_process_resources_are_measured_only_when_requested(monkeypatch) -> None
 
     assert calls == []
     snapshot = current_process_resources()
-    assert snapshot.as_dict() == {"resident_bytes": 10, "virtual_bytes": 20, "process_cpu_percent": 3.5}
+    assert snapshot == resource_module.ResourceSnapshot(10, 20, 3.5)
     assert calls == ["memory", "cpu"]

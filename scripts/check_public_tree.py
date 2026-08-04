@@ -53,11 +53,8 @@ DATA_MANIFEST = Path("src/pyspace/data/DATA_MANIFEST.json")
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
     with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def _git_candidates(root: Path) -> list[Path] | None:

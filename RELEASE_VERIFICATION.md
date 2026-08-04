@@ -1,6 +1,6 @@
 # PySpace 0.1.0 release-candidate verification
 
-Verified: 2026-08-04T02:00:44Z
+Verified: 2026-08-04T02:11:25Z
 
 Host: macOS arm64
 
@@ -14,7 +14,7 @@ Pinned SPACE commit: `94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8`
 
 | Command | Result |
 | --- | --- |
-| `PATH="$PWD/.venv/bin:$PATH" make check` | PASS: Ruff format/lint clean; mypy clean across 86 checked files; 201 tests passed; 84.10% overall and 92.08% parity/public-I/O kernel coverage. |
+| `PATH="$PWD/.venv/bin:$PATH" make check` | PASS: Ruff format/lint clean; mypy clean across 86 checked files; 201 tests passed; 84.08% overall and 92.08% parity/public-I/O kernel coverage. |
 | `SPACE_R_REPO=/tmp/pyspace-r-upstream.nwDhgo PATH="$PWD/.venv/bin:$PATH" make parity` | PASS: 59 tests against the pristine pinned R checkout, including linked object/scalar transMI input. |
 | `.venv/bin/python -m pyspace.parity --r-repo /tmp/pyspace-r-upstream.nwDhgo --json --output PARITY_REPORT.json` | PASS: 40/40 declarative checks; score 1.0. |
 | `PATH="$PWD/.venv/bin:$PATH" make test-all` | PASS: 201 tests. |
@@ -26,6 +26,7 @@ Pinned SPACE commit: `94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8`
 | `PATH="$PWD/.venv/bin:$PATH" make docs` | PASS: strict MkDocs build; Material emitted its informational MkDocs 2.0 advisory. |
 | `PYSPACE_REQUIRE_COMMUNITY=1 .venv/bin/pytest -q tests/test_networks.py` | PASS: 5 tests with igraph, Leiden, and Infomap installed. |
 | `PATH="$PWD/.venv/bin:$PATH" make benchmark` | PASS: output checksums matched before five timing samples per workload; see `BENCHMARK_REPORT.json`. |
+| `ponytail-review` (two passes) | PASS: the first pass removed 17 lines of redundant checksum and resource-snapshot machinery; the repeat reported no actionable cuts. |
 | `.venv/bin/python scripts/check_public_tree.py` | PASS: no prohibited files, caches, study-specific paths, or unexplained oversized artifacts. |
 | `.venv/bin/python scripts/write_data_manifest.py --check` | PASS. |
 | `.venv/bin/python scripts/write_dependency_inventory.py --check` | PASS. |

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import dataclass
 
 import psutil
 
@@ -12,9 +12,6 @@ class ResourceSnapshot:
     resident_bytes: int
     virtual_bytes: int
     process_cpu_percent: float
-
-    def as_dict(self) -> dict[str, int | float]:
-        return asdict(self)
 
 
 def current_process_resources() -> ResourceSnapshot:

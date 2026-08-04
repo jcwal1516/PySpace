@@ -14,11 +14,8 @@ UPSTREAM_COMMIT = "94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8"
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
     with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def _provenance(relative: str) -> str:

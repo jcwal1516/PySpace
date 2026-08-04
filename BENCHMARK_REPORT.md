@@ -1,6 +1,6 @@
 # PySpace R/Python benchmark report
 
-Generated: 2026-08-03T22:59:17.438935+00:00
+Generated: 2026-08-04T02:10:15.072914+00:00
 
 Pinned SPACE commit: `94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8`
 
@@ -8,13 +8,13 @@ Outputs were compared before timing. Ratios are measurements from this environme
 
 | Scenario | Items | Operations/sample | Python median (s) | R median (s) | R/Python |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| synthetic-distribution-small-matching | 200 | 20 | 0.000450 | 0.000200 | 0.445 |
-| synthetic-distribution-small-nonmatching | 200 | 20 | 0.000463 | 0.000150 | 0.324 |
-| synthetic-distribution-large-matching | 20000 | 20 | 0.000735 | 0.001050 | 1.428 |
-| synthetic-distribution-large-nonmatching | 20000 | 20 | 0.000735 | 0.001150 | 1.564 |
-| upstream-tutorial-census-distribution | 11763 | 20 | 0.000748 | 0.001000 | 1.337 |
-| synthetic-volume-batch-serial | 200 | 1 | 0.007318 | 0.019000 | 2.596 |
-| synthetic-volume-batch-process | 200 | 1 | 0.011085 | 0.011000 | 0.992 |
+| synthetic-distribution-small-matching | 200 | 20 | 0.000487 | 0.000200 | 0.411 |
+| synthetic-distribution-small-nonmatching | 200 | 20 | 0.000477 | 0.000200 | 0.419 |
+| synthetic-distribution-large-matching | 20000 | 20 | 0.000775 | 0.001100 | 1.420 |
+| synthetic-distribution-large-nonmatching | 20000 | 20 | 0.000769 | 0.001150 | 1.496 |
+| upstream-tutorial-census-distribution | 11763 | 20 | 0.000797 | 0.001100 | 1.379 |
+| synthetic-volume-batch-serial | 200 | 1 | 0.007642 | 0.019000 | 2.486 |
+| synthetic-volume-batch-process | 200 | 1 | 0.010815 | 0.010000 | 0.925 |
 
 ## Environment
 

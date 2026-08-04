@@ -11,80 +11,80 @@
     "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.3.19.1)]",
     "r": "R version 4.5.2 (2025-10-31)"
   },
-  "generated_at": "2026-08-03T22:59:17.438935+00:00",
+  "generated_at": "2026-08-04T02:10:15.072914+00:00",
   "repetitions": 5,
   "scenarios": [
     {
       "input_provenance": "Deterministic synthetic object/scalar abundance table.",
       "input_rows_or_items": 200,
-      "measured_r_over_python_ratio": 0.4448027595172657,
+      "measured_r_over_python_ratio": 0.4105108000885353,
       "name": "synthetic-distribution-small-matching",
       "output_checksum": "b4e7094e4e85208d5e59c7390114493e2527bb5c299df915c558ccf7af14e9a1",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.00044963749824091794,
+      "python_median_seconds": 0.00048719790065661074,
       "python_samples_seconds": [
-        0.00044963749824091794,
-        0.00044717085547745227,
-        0.00044084375258535147,
-        0.00045136455446481705,
-        0.0004618895938619971
+        0.0005830666515976191,
+        0.00046486250357702374,
+        0.00048719790065661074,
+        0.0004509791499003768,
+        0.0004926104098558426
       ],
       "r_median_seconds": 0.0002,
       "r_samples_seconds": [
-        0.00035,
-        0.0001,
+        0.000399999999999999,
         0.0002,
         0.00015,
-        0.0002
-      ],
-      "timed_operations_per_sample": 20
-    },
-    {
-      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
-      "input_rows_or_items": 200,
-      "measured_r_over_python_ratio": 0.32416662034541555,
-      "name": "synthetic-distribution-small-nonmatching",
-      "output_checksum": "3c9ab997215a2251a25d2f4e9213f12cddf48ec5c8e1fd64d7a9a9528a964b90",
-      "parity_verified_before_timing": true,
-      "python_median_seconds": 0.0004627250018529594,
-      "python_samples_seconds": [
-        0.0004738791496492922,
-        0.0004627250018529594,
-        0.00044823749922215936,
-        0.00047089585568755866,
-        0.0004534645937383175
-      ],
-      "r_median_seconds": 0.00015,
-      "r_samples_seconds": [
-        0.00035,
-        0.00015,
-        0.00015,
-        0.00015,
+        0.0002,
         0.00015
       ],
       "timed_operations_per_sample": 20
     },
     {
       "input_provenance": "Deterministic synthetic object/scalar abundance table.",
+      "input_rows_or_items": 200,
+      "measured_r_over_python_ratio": 0.4192909059283426,
+      "name": "synthetic-distribution-small-nonmatching",
+      "output_checksum": "3c9ab997215a2251a25d2f4e9213f12cddf48ec5c8e1fd64d7a9a9528a964b90",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.0004769957973621786,
+      "python_samples_seconds": [
+        0.0004930354072712362,
+        0.0004769957973621786,
+        0.00046276875073090193,
+        0.0005066291429102421,
+        0.0004765791585668921
+      ],
+      "r_median_seconds": 0.0002,
+      "r_samples_seconds": [
+        0.0004,
+        0.0002,
+        0.0002,
+        0.0002,
+        0.0002
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
       "input_rows_or_items": 20000,
-      "measured_r_over_python_ratio": 1.428231365266884,
+      "measured_r_over_python_ratio": 1.4198777289783653,
       "name": "synthetic-distribution-large-matching",
       "output_checksum": "25f3169be8681518b7a3f928ddab60e05a1271c9d506ad4bc8a25ad7b84ab32c",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.0007351750042289496,
+      "python_median_seconds": 0.0007747145951725543,
       "python_samples_seconds": [
-        0.0007431062520481646,
-        0.0007444249931722879,
-        0.0007351750042289496,
-        0.0007261187536641955,
-        0.0007277521071955562
+        0.0007957499939948321,
+        0.0008018707972951234,
+        0.0007726771058514714,
+        0.0007635770947672426,
+        0.0007747145951725543
       ],
-      "r_median_seconds": 0.00105,
+      "r_median_seconds": 0.0011,
       "r_samples_seconds": [
-        0.00135,
+        0.0014,
+        0.00115,
         0.0011,
-        0.00105,
-        0.00105,
+        0.0011,
         0.00105
       ],
       "timed_operations_per_sample": 20
@@ -92,100 +92,100 @@
     {
       "input_provenance": "Deterministic synthetic object/scalar abundance table.",
       "input_rows_or_items": 20000,
-      "measured_r_over_python_ratio": 1.5638279914471565,
+      "measured_r_over_python_ratio": 1.4962633997402053,
       "name": "synthetic-distribution-large-nonmatching",
       "output_checksum": "d4b0b04cdadee905cdf590cb4fbc8b8331c9636b410a11b27e3d1034004df266",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.000735374994110316,
+      "python_median_seconds": 0.0007685812539421022,
       "python_samples_seconds": [
-        0.0007612437475472689,
-        0.0007322145509533584,
-        0.000735374994110316,
-        0.0007575437426567078,
-        0.0007260291487909854
+        0.0007685812539421022,
+        0.0007516958517953754,
+        0.0007549625006504357,
+        0.0008119541453197598,
+        0.0007949562510475517
       ],
       "r_median_seconds": 0.00115,
       "r_samples_seconds": [
-        0.00145,
-        0.0011,
+        0.0015,
         0.00115,
+        0.0012,
         0.00115,
-        0.0011
+        0.00115
       ],
       "timed_operations_per_sample": 20
     },
     {
       "input_provenance": "Runtime-only inst/doc/CEN_table.Rdata from the pinned Apache-2.0 upstream; reviewed SHA-256 bbd5e6763049bdd9eb372d99dd8ff07a65b51a89df734b6f44553e9137e87fa4; 18 numeric SPACE census columns and no identifier column.",
       "input_rows_or_items": 11763,
-      "measured_r_over_python_ratio": 1.3368313748838005,
+      "measured_r_over_python_ratio": 1.379418463054523,
       "name": "upstream-tutorial-census-distribution",
       "output_checksum": "b3f32c99b449802abb854b9e93e678a9b7e9487a88dfded250ca9aef070ea16c",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.0007480375003069639,
+      "python_median_seconds": 0.0007974374922923744,
       "python_samples_seconds": [
-        0.0007637145463377237,
-        0.0007710603997111321,
-        0.0007480375003069639,
-        0.000736295839305967,
-        0.0007230125018395483
+        0.0007890125038102269,
+        0.0008117020945064724,
+        0.0007974374922923744,
+        0.0008097770507447422,
+        0.000776491651777178
       ],
-      "r_median_seconds": 0.001,
+      "r_median_seconds": 0.0011,
       "r_samples_seconds": [
-        0.00125,
-        0.001,
-        0.001,
-        0.001,
-        0.001
+        0.0014,
+        0.0011,
+        0.00115,
+        0.0011,
+        0.0011
       ],
       "timed_operations_per_sample": 20
     },
     {
       "input_provenance": "Synthetic radius batch; identical ordered vectors in R and Python.",
       "input_rows_or_items": 200,
-      "measured_r_over_python_ratio": 2.5961604282518618,
+      "measured_r_over_python_ratio": 2.486246512251419,
       "name": "synthetic-volume-batch-serial",
       "output_checksum": "427caa6742a25f76a2d1ea9b66df939f959f59b47c40fd58577d37149c9a82c2",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.007318499963730574,
+      "python_median_seconds": 0.007642041891813278,
       "python_samples_seconds": [
-        0.007493041921406984,
-        0.007297208067029715,
-        0.007725541014224291,
-        0.007318499963730574,
-        0.007315750000998378
+        0.007872791029512882,
+        0.007408999837934971,
+        0.007618292002007365,
+        0.007642041891813278,
+        0.007690417114645243
       ],
       "r_median_seconds": 0.019,
       "r_samples_seconds": [
-        0.02,
+        0.021,
         0.019,
         0.019,
-        0.018,
-        0.018
+        0.019,
+        0.019
       ],
       "timed_operations_per_sample": 1
     },
     {
       "input_provenance": "Synthetic radius batch; identical ordered vectors in R and Python.",
       "input_rows_or_items": 200,
-      "measured_r_over_python_ratio": 0.9923020811911967,
+      "measured_r_over_python_ratio": 0.9246132425300961,
       "name": "synthetic-volume-batch-process",
       "output_checksum": "427caa6742a25f76a2d1ea9b66df939f959f59b47c40fd58577d37149c9a82c2",
       "parity_verified_before_timing": true,
-      "python_median_seconds": 0.011085334001109004,
+      "python_median_seconds": 0.010815332876518369,
       "python_samples_seconds": [
-        0.011266665998846292,
-        0.04085341701284051,
-        0.01069820811972022,
-        0.010531832929700613,
-        0.011085334001109004
+        0.01084054191596806,
+        0.042275333078578115,
+        0.010815332876518369,
+        0.010457958094775677,
+        0.010784124955534935
       ],
-      "r_median_seconds": 0.011,
+      "r_median_seconds": 0.01,
       "r_samples_seconds": [
-        0.012,
+        0.013,
         0.01,
         0.011,
         0.01,
-        0.012
+        0.01
       ],
       "timed_operations_per_sample": 1
     }

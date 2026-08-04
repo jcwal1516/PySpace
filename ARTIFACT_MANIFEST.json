@@ -36,14 +36,14 @@
       "sha256": "dc15ea136be4560cc86f7c080262efa9f07e6f895797b443823d8c64ed96e2ea"
     },
     {
-      "bytes": 6547,
+      "bytes": 6554,
       "path": "BENCHMARK_REPORT.json",
-      "sha256": "9ba85abaf8699b8ad18105b36f4b8706db2449d2abbd0321daaf642c570586aa"
+      "sha256": "bd7c71454f461efbbb4aec760d6b213f2e671cb158684baa51706873799a2e3e"
     },
     {
       "bytes": 1400,
       "path": "BENCHMARK_REPORT.md",
-      "sha256": "472b1d102a483884af8ed254c71d17994f6130118a9cd3865fae9fde6aa7dff4"
+      "sha256": "3170a448973fecb02d8ffc0a83b65b4e0cb88735b23bbd58facd06c6c72685b1"
     },
     {
       "bytes": 551,
@@ -86,9 +86,9 @@
       "sha256": "a2574eb220144b5c45a40a325f8db12223ed3fb4f7aae1b7d18c7fd467e33639"
     },
     {
-      "bytes": 3308,
+      "bytes": 3478,
       "path": "RELEASE_VERIFICATION.md",
-      "sha256": "50c6fcfb4461ced0b227e2db65f323642ceead9c751c205c78ef6d0dc8d2aa2c"
+      "sha256": "ea25a9a38f36fd4b5f953b32680e61a557a1880a314342dbf4fb8e97b14eda65"
     },
     {
       "bytes": 573,
@@ -106,9 +106,9 @@
       "sha256": "77a672bcf195536403f2f8184004dba323beeba83c43efd2432dddb62f0121e1"
     },
     {
-      "bytes": 14175,
+      "bytes": 14081,
       "path": "benchmarks/compare_r_python.py",
-      "sha256": "caf6588e96eb192a28b9a09d692a5defab55681e20da1af5f756af758ed70f0d"
+      "sha256": "db15a0bd268dab5267db06fbbb6ec0ce9451c425e9de6f52db6b0f7f0644271b"
     },
     {
       "bytes": 2603,
@@ -216,9 +216,9 @@
       "sha256": "aa25efdf47becd2b053e4f1ee8daca928727cb8ee1f233a696b66bc0ebfa7d93"
     },
     {
-      "bytes": 6518,
+      "bytes": 6424,
       "path": "scripts/check_public_tree.py",
-      "sha256": "cc7569813af3906200e01ceb7808e4d5ab6bed68f1d3a92d40259d991fce1417"
+      "sha256": "b741a72022b95b188c6aba645acf95084332a86bcaab95315a3c926f0a3a3a4f"
     },
     {
       "bytes": 9101,
@@ -236,14 +236,14 @@
       "sha256": "c573a9a1405ed7effe465cd6550e0716313a7070ebe3d3109f11b40580a01c83"
     },
     {
-      "bytes": 2425,
+      "bytes": 2331,
       "path": "scripts/write_artifact_manifest.py",
-      "sha256": "abef65af4f11673fea527a11934e61bd38c31155f8e36350e33bd55abc88fb50"
+      "sha256": "e9562b41b9ffaf7239f93582968fb92ece6bb5120cfcbe168f2c3b2b083481a1"
     },
     {
-      "bytes": 2832,
+      "bytes": 2738,
       "path": "scripts/write_data_manifest.py",
-      "sha256": "0103b1ee72068a532669c72b9599e95e7768df872a7b79d12c1a878f9f14094f"
+      "sha256": "254e2acfb7a7f7a24edca07cc3360f488124b509dcf5d3513c10ffb061d68e9f"
     },
     {
       "bytes": 5999,
@@ -491,14 +491,14 @@
       "sha256": "7220be375d158a1d7613a57e86fa78d0231fb205701bfbaf3aeed7819d553dcc"
     },
     {
-      "bytes": 809,
+      "bytes": 723,
       "path": "src/pyspace/parallel/resources.py",
-      "sha256": "dab22cb8415bb244809bc46d310592550801a9fed870d4c78c0ba105b03f878b"
+      "sha256": "90937f310107e674162b2f614c54fa9675ed11f9507de6f0b2460b976a6d39b2"
     },
     {
-      "bytes": 10088,
+      "bytes": 9994,
       "path": "src/pyspace/parity.py",
-      "sha256": "a177803a21cb6d52cdd6b803e7188903c16ae0acf9cbf01ea25f757ecd0fae05"
+      "sha256": "8b47c4de87fdb3c5259c2464569c2d282863989c9ccea861fd28581da9b29137"
     },
     {
       "bytes": 15319,
@@ -626,9 +626,9 @@
       "sha256": "56ac96ebaa033707af54aee0c17bbd49ee3aa6fa84b499f83eeaeecf799e57fc"
     },
     {
-      "bytes": 852,
+      "bytes": 816,
       "path": "tests/test_parallel_resources.py",
-      "sha256": "c915135d1994434140fcc26ec4fe5f3e5fb1ed4930f822f0316bdf64aaba78c5"
+      "sha256": "2047f670bc0cb3fec065d0885d1b71c08dce36715c6e60807519fdbd21adeca3"
     },
     {
       "bytes": 1009,

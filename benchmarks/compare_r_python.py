@@ -36,11 +36,8 @@ DISTRIBUTION_TIMING_BATCH = 20
 
 
 def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
     with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+        return hashlib.file_digest(stream, "sha256").hexdigest()
 
 
 def _frame_checksum(frame: pd.DataFrame) -> str:
