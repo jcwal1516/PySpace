@@ -42,8 +42,9 @@ jobs:
       - run: python -m pip install -e ".[dev,docs]"
       - run: python -m ruff format --check src tests scripts benchmarks examples
       - run: python -m ruff check src tests scripts benchmarks examples
-      - run: python -m mypy src tests scripts benchmarks examples
-      - run: python -m pytest -q --cov=pyspace --cov-report=term-missing --cov-report=json:coverage.json
+      - if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+        run: python -m mypy src tests scripts benchmarks examples
+      - run: python -m pytest -q -m "not live_r" --cov=pyspace --cov-report=term-missing --cov-report=json:coverage.json
       - run: python scripts/check_kernel_coverage.py coverage.json
 
   docs:

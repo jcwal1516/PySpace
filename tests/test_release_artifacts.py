@@ -100,6 +100,22 @@ def test_public_repository_metadata_uses_the_final_github_target() -> None:
         assert "eventual public repository" not in text
 
 
+def test_ci_typechecks_once_with_the_minimum_supported_python() -> None:
+    workflow = (ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+
+    assert "if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'" in workflow
+    assert workflow.count("python -m mypy src tests scripts benchmarks examples") == 1
+    assert '-m "not live_r"' in workflow
+
+
+def test_security_audit_uses_a_patched_build_toolchain() -> None:
+    pyproject = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    workflow = (ROOT / ".github" / "workflows" / "security.yml").read_text(encoding="utf-8")
+
+    assert "setuptools>=83" in pyproject["build-system"]["requires"]
+    assert 'python -m pip install --upgrade pip "setuptools>=83"' in workflow
+
+
 def test_examples_execute_without_external_data(tmp_path: Path) -> None:
     for filename in ("table_workflow.py", "image_workflow.py", "safe_bundle.py"):
         namespace = runpy.run_path(str(ROOT / "examples" / filename))

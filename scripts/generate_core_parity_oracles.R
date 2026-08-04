@@ -24,7 +24,7 @@ out_dir <- arg_value("--out-dir", default_out_dir)
 r_repo <- arg_value("--r-repo", Sys.getenv("SPACE_R_REPO", ""))
 
 required_packages <- c(
-  "abind", "doParallel", "dplyr", "FNN", "foreach", "igraph", "jsonlite",
+  "abind", "digest", "doParallel", "dplyr", "FNN", "foreach", "igraph", "jsonlite",
   "memuse", "plyr", "purrr", "stringr", "tidyr"
 )
 missing_packages <- required_packages[!vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)]
@@ -75,20 +75,6 @@ fixture_names <- c(
   "census_table_r_style.csv",
   "cismi_1.1.csv",
   "transmi_1.1.csv"
-)
-
-writeLines(
-  jsonlite::toJSON(
-    list(
-      upstream_repo = "eschrom/SPACE",
-      upstream_commit = upstream_commit,
-      numeric_tolerance = 1e-10,
-      fixtures = fixture_names
-    ),
-    auto_unbox = TRUE,
-    pretty = TRUE
-  ),
-  file.path(out_dir, "metadata.json")
 )
 
 utils_out <- list(
@@ -233,7 +219,7 @@ sample <- function(x, size, replace = FALSE, prob = NULL) {
 }
 transmi <- measure_transMI(
   censuses = list(make_transmi_census(1), make_transmi_census(2), make_transmi_census(3), make_transmi_census(4)),
-  groups = data.frame(Status = c("A", "A", "A", "A")),
+  groups = data.frame(Status = c("A", "A", "B", "B")),
   depth = 2,
   radii = c(1.1),
   bootstraps = 2,
@@ -242,5 +228,28 @@ transmi <- measure_transMI(
 )
 rm(sample)
 write.csv(transmi[["1.1"]], file.path(out_dir, "transmi_1.1.csv"), row.names = FALSE)
+
+fixture_hashes <- setNames(
+  lapply(fixture_names, function(filename) {
+    digest::digest(file.path(out_dir, filename), algo = "sha256", file = TRUE)
+  }),
+  fixture_names
+)
+jsonlite::write_json(
+  list(
+    upstream_repo = "eschrom/SPACE",
+    upstream_commit = upstream_commit,
+    license = "Apache-2.0",
+    provenance = paste(
+      "Generated from synthetic inputs by scripts/generate_core_parity_oracles.R",
+      "after sourcing the pinned upstream R files."
+    ),
+    numeric_tolerance = 1e-10,
+    fixtures = fixture_hashes
+  ),
+  file.path(out_dir, "metadata.json"),
+  auto_unbox = TRUE,
+  pretty = TRUE
+)
 
 message("Wrote R oracle fixtures for SPACE commit ", upstream_commit)

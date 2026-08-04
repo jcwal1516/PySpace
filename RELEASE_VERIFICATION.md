@@ -1,6 +1,6 @@
 # PySpace 0.1.0 release-candidate verification
 
-Verified: 2026-08-04T01:29:18Z
+Verified: 2026-08-04T01:46:04Z
 
 Host: macOS arm64
 
@@ -14,10 +14,10 @@ Pinned SPACE commit: `94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8`
 
 | Command | Result |
 | --- | --- |
-| `PATH="$PWD/.venv/bin:$PATH" make check` | PASS: Ruff format/lint clean; mypy clean across 85 source files; 197 tests passed; 84.10% overall and 92.08% parity/public-I/O kernel coverage. |
-| `SPACE_R_REPO=/tmp/pyspace-r-upstream.nwDhgo PATH="$PWD/.venv/bin:$PATH" make parity` | PASS: 58 tests against the pristine pinned R checkout, including linked object/scalar transMI input. |
+| `PATH="$PWD/.venv/bin:$PATH" make check` | PASS: Ruff format/lint clean; mypy clean across 86 checked files; 200 tests passed; 84.10% overall and 92.08% parity/public-I/O kernel coverage. |
+| `SPACE_R_REPO=/tmp/pyspace-r-upstream.nwDhgo PATH="$PWD/.venv/bin:$PATH" make parity` | PASS: 59 tests against the pristine pinned R checkout, including linked object/scalar transMI input. |
 | `.venv/bin/python -m pyspace.parity --r-repo /tmp/pyspace-r-upstream.nwDhgo --json --output PARITY_REPORT.json` | PASS: 40/40 declarative checks; score 1.0. |
-| `PATH="$PWD/.venv/bin:$PATH" make test-all` | PASS: 197 tests. |
+| `PATH="$PWD/.venv/bin:$PATH" make test-all` | PASS: 200 tests. |
 | `PATH="$PWD/.venv/bin:$PATH" make build` | PASS: wheel and sdist built; Twine and member inspection passed. |
 | `.venv/bin/python scripts/smoke_test_wheel.py dist/pyspace_analysis-0.1.0-py3-none-any.whl` | PASS: clean install and CLI/import smoke on Python 3.11.14. |
 | `/usr/local/bin/python3.12 scripts/smoke_test_wheel.py dist/pyspace_analysis-0.1.0-py3-none-any.whl` | PASS: Python 3.12.9. |

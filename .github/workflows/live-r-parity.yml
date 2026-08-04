@@ -27,6 +27,7 @@ jobs:
         with:
           packages: |
             any::abind
+            any::digest
             any::doParallel
             any::dplyr
             any::FNN

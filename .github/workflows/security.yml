@@ -41,6 +41,7 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+      - run: python -m pip install --upgrade pip "setuptools>=83"
       - run: python -m pip install -e ".[dev]"
       - run: python scripts/check_public_tree.py
       - run: python scripts/write_data_manifest.py --check

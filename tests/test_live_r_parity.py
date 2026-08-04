@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import subprocess
@@ -18,6 +19,7 @@ from pyspace.core.patch_summary import random_census, summarize_patches
 from pyspace.core.r_measure_cismi import _r_entropy, measure_cisMI
 from pyspace.core.r_measure_transmi import measure_transMI
 from pyspace.parity import PARITY_DATA_DIR, UPSTREAM_SPACE_COMMIT, check_upstream_source, pristine_upstream_checkout
+from tests.parity_cases import transmi_inputs
 
 ROOT = Path(__file__).resolve().parents[1]
 R_ORACLE_SCRIPT = ROOT / "scripts" / "generate_core_parity_oracles.R"
@@ -111,38 +113,6 @@ def _cismi_inputs() -> tuple[pd.DataFrame, dict[str, dict[str, pd.DataFrame]]]:
     return pd.DataFrame(rows), {"1.1": {"O1": pd.DataFrame(patch_rows_1), "O2": pd.DataFrame(patch_rows_2)}}
 
 
-def _transmi_inputs() -> tuple[list[pd.DataFrame], pd.DataFrame]:
-    patterns = (
-        (
-            np.concatenate([np.repeat(20.0, 20), np.repeat(80.0, 20)]),
-            np.concatenate([np.repeat(1.0, 20), np.repeat(4.0, 20)]),
-        ),
-        (
-            np.concatenate([np.repeat(20.0, 10), np.repeat(80.0, 30)]),
-            np.concatenate([np.repeat(1.0, 30), np.repeat(4.0, 10)]),
-        ),
-        (np.tile(np.array([20.0, 80.0]), 20), np.tile(np.array([1.0, 4.0]), 20)),
-        (np.tile(np.array([20.0, 20.0, 80.0, 80.0]), 10), np.tile(np.array([1.0, 4.0, 1.0, 4.0]), 10)),
-    )
-    censuses = []
-    for o11, s11 in patterns:
-        censuses.append(
-            pd.DataFrame(
-                {
-                    "O1.1": o11,
-                    "O1.2": 100.0 - o11,
-                    "S1.1": s11,
-                    "O1.1_S1.1": o11 * s11 / 100.0,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.0,
-                    "Radius": 1.1,
-                }
-            )
-        )
-    return censuses, pd.DataFrame({"Status": ["A", "A", "A", "A"]})
-
-
 def _generate_live_oracle(tmp_path: Path, r_repo: Path) -> Path:
     out_dir = tmp_path / "r-oracle"
     result = subprocess.run(
@@ -163,6 +133,9 @@ def test_live_r_oracle_matches_python_core_outputs(tmp_path: Path, r_repo: Path)
     metadata = json.loads((oracle_dir / "metadata.json").read_text())
     assert metadata["upstream_commit"] == UPSTREAM_SPACE_COMMIT
     assert metadata["numeric_tolerance"] == 1e-10
+    assert metadata["fixtures"]
+    for filename, expected_hash in metadata["fixtures"].items():
+        assert hashlib.sha256((oracle_dir / filename).read_bytes()).hexdigest() == expected_hash
 
     utils = json.loads((oracle_dir / "utils.json").read_text())
     assert calc_vol([2, 2, 1], dims=[20, 20, 5]) == utils["calc_vol_ellipsoid"]
@@ -231,7 +204,7 @@ def test_live_r_oracle_matches_python_mi_outputs(tmp_path: Path, r_repo: Path) -
     )
     _assert_frame_equal_canonical(cismi_result["1.1"], _read_csv(oracle_dir / "cismi_1.1.csv"))
 
-    transmi_censuses, groups = _transmi_inputs()
+    transmi_censuses, groups = transmi_inputs()
     random_plan = json.loads((PARITY_DATA_DIR / "random_plans.json").read_text())
     permutation_steps = [np.asarray(step, dtype=int) for step in random_plan["transmi_pair_permutation_steps"]]
     transmi_result = measure_transMI(

@@ -15,7 +15,8 @@ from pyspace.core.operations import patch_3D
 from pyspace.core.patch_summary import summarize_patches
 from pyspace.core.r_measure_cismi import measure_cisMI
 from pyspace.core.r_measure_transmi import measure_transMI
-from pyspace.parity import CORE_ORACLE_DIR, UPSTREAM_SPACE_COMMIT
+from pyspace.parity import CORE_ORACLE_DIR, PARITY_DATA_DIR, UPSTREAM_SPACE_COMMIT
+from tests.parity_cases import transmi_inputs
 
 
 def _oracle_csv(name: str) -> pd.DataFrame:
@@ -241,6 +242,25 @@ def test_transmi_explicit_permutations_are_parallel_equivalent_and_rng_local():
         )
         pd.testing.assert_frame_equal(serial["10"], parallel["10"])
     np.testing.assert_array_equal(np.random.random(4), expected_global_draw)
+
+
+def test_transmi_matches_the_pinned_non_degenerate_r_oracle() -> None:
+    censuses, groups = transmi_inputs()
+    random_plan = json.loads((PARITY_DATA_DIR / "random_plans.json").read_text(encoding="utf-8"))
+    permutations = [np.asarray(step, dtype=int) for step in random_plan["transmi_pair_permutation_steps"]]
+
+    result = measure_transMI(
+        censuses,
+        groups,
+        depth=2,
+        radii=[1.1],
+        bootstraps=2,
+        max_bins=5,
+        cores=1,
+        permutation_indices=permutations,
+    )
+
+    _assert_frame_equal_canonical(result["1.1"], _oracle_csv("transmi_1.1.csv"))
 
 
 def test_census_table_r_style_call_exposes_census_and_radius_patch_list():
