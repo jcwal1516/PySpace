@@ -314,7 +314,7 @@ def learn_pattern(  # noqa: PLR0913, PLR0917
     )[0]
 
 
-def learn_pattern_result(  # noqa: PLR0913, PLR0917
+def learn_pattern_result(
     census: pd.DataFrame | Sequence[pd.DataFrame],
     ensemble: Sequence[str],
     radius: float,

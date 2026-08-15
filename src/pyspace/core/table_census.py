@@ -295,7 +295,7 @@ def census_coordinates(
     )
 
 
-def census_table(  # noqa: PLR0913 - pinned public R contract plus explicit random plans
+def census_table(
     table_data: str | Path | pd.DataFrame,
     radii: float | list[float],
     sample_size: int | list[int],

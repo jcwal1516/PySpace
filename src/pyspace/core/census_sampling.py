@@ -116,7 +116,7 @@ def _extract(
     )
 
 
-def create_neighborhoods(  # noqa: PLR0913, PLR0917 - stable public sampling contract
+def create_neighborhoods(
     data: np.ndarray | pd.DataFrame | str | Path,
     radii: float | list[float],
     seed_points: np.ndarray | None = None,

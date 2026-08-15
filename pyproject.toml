@@ -107,7 +107,7 @@ src = ["src"]
 extend-exclude = ["site", "dist", "build"]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "B", "BLE", "UP", "C4", "C90", "SIM", "PLR", "PERF", "NPY"]
+select = ["E", "F", "W", "I", "B", "BLE", "UP", "C4", "C90", "SIM", "PLR", "PERF", "NPY", "RUF100"]
 ignore = ["B008", "PLR2004"]
 
 [tool.ruff.lint.mccabe]

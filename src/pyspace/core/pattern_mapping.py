@@ -56,7 +56,7 @@ def _combined_images(images: np.ndarray | Sequence[np.ndarray] | Mapping[str, np
     return np.concatenate(normalized, axis=3)
 
 
-def map_pattern(  # noqa: PLR0913, PLR0917
+def map_pattern(
     covar_data: pd.DataFrame,
     region_bounds: Sequence[Sequence[float]],
     img: np.ndarray | Sequence[np.ndarray] | Mapping[str, np.ndarray],

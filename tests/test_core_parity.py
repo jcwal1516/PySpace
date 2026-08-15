@@ -16,22 +16,11 @@ from pyspace.core.patch_summary import summarize_patches
 from pyspace.core.r_measure_cismi import measure_cisMI
 from pyspace.core.r_measure_transmi import measure_transMI
 from pyspace.parity import CORE_ORACLE_DIR, PARITY_DATA_DIR, UPSTREAM_SPACE_COMMIT
-from tests.parity_cases import transmi_inputs
+from tests.parity_cases import _assert_frame_equal_canonical, transmi_inputs
 
 
 def _oracle_csv(name: str) -> pd.DataFrame:
     return pd.read_csv(Path(CORE_ORACLE_DIR) / name)
-
-
-def _assert_frame_equal_canonical(left: pd.DataFrame, right: pd.DataFrame) -> None:
-    pd.testing.assert_index_equal(left.columns, right.columns)
-    pd.testing.assert_frame_equal(
-        left.reset_index(drop=True),
-        right.reset_index(drop=True),
-        check_dtype=False,
-        atol=1e-10,
-        rtol=1e-10,
-    )
 
 
 def test_core_oracle_metadata_is_pinned_to_target_space_commit():

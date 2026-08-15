@@ -81,7 +81,7 @@ def create_3d_volume_weight_matrix(
     )
 
 
-def calculate_3d_morans_i(  # noqa: PLR0913 - stable 3D analysis contract
+def calculate_3d_morans_i(
     values: np.ndarray,
     coordinates: np.ndarray,
     volumes: np.ndarray | None = None,
@@ -160,7 +160,7 @@ def _volume_plan(volumes: np.ndarray, generator: np.random.Generator) -> np.ndar
     return result
 
 
-def volume_preserving_permutation_test_3d(  # noqa: PLR0913, PLR0917 - explicit 3D statistical controls
+def volume_preserving_permutation_test_3d(
     values: np.ndarray,
     coordinates: np.ndarray,
     volumes: np.ndarray | None = None,
@@ -196,10 +196,13 @@ def volume_preserving_permutation_test_3d(  # noqa: PLR0913, PLR0917 - explicit 
     generator = random_state if isinstance(random_state, np.random.Generator) else np.random.default_rng(random_state)
     if permutation_indices is not None:
         plans = _validate_plan(permutation_indices, num_permutations, len(observations))
+        permutation_method = "explicit"
     elif preserve_volume_structure and object_volumes is not None:
         plans = [_volume_plan(object_volumes, generator) for _ in range(num_permutations)]
+        permutation_method = "3d_volume_preserving"
     else:
         plans = [generator.permutation(len(observations)) for _ in range(num_permutations)]
+        permutation_method = "unrestricted"
     observed = float(statistic(observations, points, object_volumes))
     null = np.asarray([statistic(observations[indices], points, object_volumes) for indices in plans], dtype=float)
     if np.any(~np.isfinite(null)):
@@ -214,7 +217,7 @@ def volume_preserving_permutation_test_3d(  # noqa: PLR0913, PLR0917 - explicit 
         float((observed - null.mean()) / standard_deviation) if standard_deviation else 0.0,
         (float(np.quantile(null, alpha / 2)), float(np.quantile(null, 1 - alpha / 2))),
         len(null),
-        "explicit" if permutation_indices is not None else "3d_volume_preserving",
+        permutation_method,
     )
 
 

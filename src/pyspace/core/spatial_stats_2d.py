@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import warnings
 from collections.abc import Callable, Sequence
 from typing import Any, Literal
 
@@ -31,7 +32,7 @@ def _default_distance(distances: np.ndarray) -> float:
     return float(finite.max())
 
 
-def create_spatial_weight_matrix(  # noqa: PLR0913 - explicit public weight construction controls
+def create_spatial_weight_matrix(
     coordinates: np.ndarray,
     matrix_type: WeightMatrixType = WeightMatrixType.QUEEN,
     k_neighbors: int = 8,
@@ -264,7 +265,7 @@ def _validate_permutation_plan(plan: Sequence[np.ndarray], count: int, size: int
     return result
 
 
-def spatial_permutation_test(  # noqa: PLR0913 - explicit statistical controls
+def spatial_permutation_test(
     values: np.ndarray,
     coordinates: np.ndarray,
     test_statistic: Callable[[np.ndarray, np.ndarray], float],
@@ -274,21 +275,32 @@ def spatial_permutation_test(  # noqa: PLR0913 - explicit statistical controls
     random_state: int | np.random.Generator | None = None,
     permutation_indices: Sequence[np.ndarray] | None = None,
 ) -> SpatialPermutationResult:
-    """Test a statistic with local RNG or a fully explicit permutation plan."""
+    """Test a statistic with local RNG or a fully explicit permutation plan.
+
+    Generated plans are currently unrestricted. Other structure-method names
+    remain accepted for compatibility but warn instead of misreporting the plan.
+    """
     observations = np.asarray(values, dtype=float)
     points = validate_coordinates(coordinates)
     if observations.ndim != 1 or len(observations) != len(points) or np.any(~np.isfinite(observations)):
         raise ValueError("values must be one finite observation per coordinate")
     if num_permutations <= 0 or not 0 < confidence_level < 1:
         raise ValueError("num_permutations must be positive and confidence_level must be in (0, 1)")
+    if preserve_structure_method not in {"unrestricted", "constrained", "blocks", "distance"}:
+        raise ValueError("Unknown preserve_structure_method")
+    if permutation_indices is None and preserve_structure_method != "unrestricted":
+        warnings.warn(
+            f"preserve_structure_method={preserve_structure_method!r} is not implemented; "
+            "using unrestricted permutations",
+            RuntimeWarning,
+            stacklevel=2,
+        )
     generator = random_state if isinstance(random_state, np.random.Generator) else np.random.default_rng(random_state)
     plans = (
         _validate_permutation_plan(permutation_indices, num_permutations, len(observations))
         if permutation_indices is not None
         else [generator.permutation(len(observations)) for _ in range(num_permutations)]
     )
-    if preserve_structure_method not in {"unrestricted", "constrained", "blocks", "distance"}:
-        raise ValueError("Unknown preserve_structure_method")
     observed = float(test_statistic(observations, points))
     null = np.asarray([test_statistic(observations[indices], points) for indices in plans], dtype=float)
     if np.any(~np.isfinite(null)):
@@ -303,7 +315,7 @@ def spatial_permutation_test(  # noqa: PLR0913 - explicit statistical controls
         effect_size=float((observed - null.mean()) / standard_deviation) if standard_deviation else 0.0,
         confidence_interval=(float(np.quantile(null, alpha / 2)), float(np.quantile(null, 1 - alpha / 2))),
         num_permutations=len(null),
-        permutation_method="explicit" if permutation_indices is not None else preserve_structure_method,
+        permutation_method="explicit" if permutation_indices is not None else "unrestricted",
     )
 
 

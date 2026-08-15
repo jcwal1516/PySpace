@@ -89,7 +89,7 @@ def _bootstrap_null_modularity(
     return _modularity_for_similarity(sim, partitions)
 
 
-def measure_transMI(  # noqa: N802, PLR0913, PLR0917 - direct port of the pinned R export
+def measure_transMI(  # noqa: PLR0913, PLR0917 - direct port of the pinned R export
     censuses: list[pd.DataFrame],
     groups: pd.DataFrame,
     depth: int,
@@ -470,30 +470,8 @@ def measure_transMI(  # noqa: N802, PLR0913, PLR0917 - direct port of the pinned
             result_df[f"TransMI_{group_col}"] = trans_mi_values
             result_df[f"Zscore_{group_col}"] = z_scores
             result_df[f"Pvalue_{group_col}"] = p_values
-            result_df[f"Padjust_{group_col}"] = _bh_adjust(np.array(p_values))
+            result_df[f"Padjust_{group_col}"] = stats.false_discovery_control(np.array(p_values), method="bh")
 
         final_results[radius_key] = result_df
 
     return final_results
-
-
-def _bh_adjust(p_values: np.ndarray) -> np.ndarray:
-    """Benjamini-Hochberg FDR correction."""
-    p = np.asarray(p_values, dtype=float)
-    m = p.size
-    if m == 0:
-        return p
-
-    order = np.argsort(p)
-    ranks = np.empty_like(order)
-    ranks[order] = np.arange(1, m + 1)
-
-    q = p * (m / ranks)
-
-    # Enforce monotone property from largest to smallest
-    q_sorted = q[order]
-    for i in range(m - 2, -1, -1):
-        q_sorted[i] = min(q_sorted[i], q_sorted[i + 1])
-    q[order] = q_sorted
-
-    return np.clip(q, 0.0, 1.0)

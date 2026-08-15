@@ -19,7 +19,7 @@ from pyspace.core.patch_summary import random_census, summarize_patches
 from pyspace.core.r_measure_cismi import _r_entropy, measure_cisMI
 from pyspace.core.r_measure_transmi import measure_transMI
 from pyspace.parity import PARITY_DATA_DIR, UPSTREAM_SPACE_COMMIT, check_upstream_source, pristine_upstream_checkout
-from tests.parity_cases import transmi_inputs
+from tests.parity_cases import _assert_frame_equal_canonical, transmi_inputs
 
 ROOT = Path(__file__).resolve().parents[1]
 R_ORACLE_SCRIPT = ROOT / "scripts" / "generate_core_parity_oracles.R"
@@ -38,17 +38,6 @@ def r_repo() -> Iterator[Path]:
         return
     with pristine_upstream_checkout() as checkout:
         yield checkout
-
-
-def _assert_frame_equal_canonical(left: pd.DataFrame, right: pd.DataFrame) -> None:
-    pd.testing.assert_index_equal(left.columns, right.columns)
-    pd.testing.assert_frame_equal(
-        left.reset_index(drop=True),
-        right.reset_index(drop=True),
-        check_dtype=False,
-        atol=1e-10,
-        rtol=1e-10,
-    )
 
 
 def _read_csv(path: Path) -> pd.DataFrame:

@@ -82,18 +82,19 @@ def test_spatial_fdr_and_generated_permutation_plans() -> None:
         method="spatial_bonferroni",
         neighborhood_size=2,
     )
-    permutation = spatial_permutation_test(
-        VALUES,
-        POINTS_2D,
-        lambda sample, _points: float(sample @ np.arange(len(sample))),
-        num_permutations=3,
-        preserve_structure_method="blocks",
-        random_state=9,
-    )
+    with pytest.warns(RuntimeWarning, match="unrestricted"):
+        permutation = spatial_permutation_test(
+            VALUES,
+            POINTS_2D,
+            lambda sample, _points: float(sample @ np.arange(len(sample))),
+            num_permutations=3,
+            preserve_structure_method="blocks",
+            random_state=9,
+        )
 
     assert bh["method"] == "spatial_benjamini_hochberg"
     assert bonferroni["method"] == "spatial_bonferroni"
-    assert permutation.permutation_method == "blocks"
+    assert permutation.permutation_method == "unrestricted"
     assert permutation.null_distribution.shape == (3,)
 
 
@@ -159,9 +160,19 @@ def test_3d_weight_moran_connectivity_and_permutations() -> None:
         num_permutations=3,
         random_state=2,
     )
+    unrestricted = volume_preserving_permutation_test_3d(
+        values,
+        points,
+        volumes,
+        lambda sample, _points, _volumes: float(sample @ np.arange(len(sample))),
+        num_permutations=3,
+        preserve_volume_structure=False,
+        random_state=2,
+    )
 
     assert weights.parameters["is_3d"] is True
     assert moran.interpretation.startswith("3D (18-connectivity)")
     assert "mean_clustering_coefficient" not in connectivity
     assert explicit.permutation_method == "explicit"
     assert generated.permutation_method == "3d_volume_preserving"
+    assert unrestricted.permutation_method == "unrestricted"

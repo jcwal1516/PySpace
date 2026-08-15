@@ -4,6 +4,17 @@ import numpy as np
 import pandas as pd
 
 
+def _assert_frame_equal_canonical(left: pd.DataFrame, right: pd.DataFrame) -> None:
+    pd.testing.assert_index_equal(left.columns, right.columns)
+    pd.testing.assert_frame_equal(
+        left.reset_index(drop=True),
+        right.reset_index(drop=True),
+        check_dtype=False,
+        atol=1e-10,
+        rtol=1e-10,
+    )
+
+
 def transmi_inputs() -> tuple[list[pd.DataFrame], pd.DataFrame]:
     """Return the shared non-degenerate transMI parity case."""
     patterns = (

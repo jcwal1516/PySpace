@@ -201,9 +201,9 @@
       "sha256": "d8871269582d2fb52ab38fbf3d55d5ab51bf764436d647831481eb019a159ac7"
     },
     {
-      "bytes": 3383,
+      "bytes": 3393,
       "path": "pyproject.toml",
-      "sha256": "8a62c03636c8fc04ac13bb573def59ae1e7c9d1af3b4686601f7163f58f4ebe9"
+      "sha256": "1e1b2fb0d7dcff48c91fd42c8a85569e2dd5f31203e90935ba52a3089c3a0f6f"
     },
     {
       "bytes": 74,
@@ -281,9 +281,9 @@
       "sha256": "77bf7b7c554612e95ba88f4eb156f487fd7fec921f74ccf30ef0f5e4ba6e2aab"
     },
     {
-      "bytes": 7231,
+      "bytes": 7171,
       "path": "src/pyspace/core/census_sampling.py",
-      "sha256": "c84537ce0dd89db16efdd224380847353863d591a10ff0f3c2d9d99fd44afb21"
+      "sha256": "a3acd8682774946ab275c778e7cc34d6e91345386cb4584e15b1ec56a5f143c2"
     },
     {
       "bytes": 6534,
@@ -296,9 +296,9 @@
       "sha256": "1e49c911e4fdc57bec74dfab874cfc50b4277d619c38cf67783cd9f32857ad79"
     },
     {
-      "bytes": 11499,
+      "bytes": 11410,
       "path": "src/pyspace/core/image_census.py",
-      "sha256": "4f541bed58c6dc52fb7a5ef822052f731617b3e6a6e132257865056df2f25008"
+      "sha256": "fe01fc8300e553120bd6b5340ba69c2d33a9f492459c8e229e732a71caa98198"
     },
     {
       "bytes": 4497,
@@ -331,14 +331,14 @@
       "sha256": "3d977f926c18ec45d7e89c8848536cb9901e1d322ae6a519a348c2e5e4a58335"
     },
     {
-      "bytes": 14248,
+      "bytes": 14222,
       "path": "src/pyspace/core/pattern_learning.py",
-      "sha256": "6d02806c32b9c390da166f43f0a329beff660192509dfd9cc78b4f8a33886267"
+      "sha256": "6c47f25346050a68819236fd08beda6fc7cf4d8491ae2d6927ade3240e73ba74"
     },
     {
-      "bytes": 6560,
+      "bytes": 6534,
       "path": "src/pyspace/core/pattern_mapping.py",
-      "sha256": "0b71a6728c0a1cee7953ec17dd456d2eb5dc49f7aa8d685d43c3e458bc6b7df2"
+      "sha256": "530ab66de5764afa5187a3250ce73f533e721f387ffc2297e85cabb1e21ffc36"
     },
     {
       "bytes": 6475,
@@ -346,14 +346,14 @@
       "sha256": "2f269f76521c065d662a8b78a857a404e50132a3b7f670bac381b461e74b8051"
     },
     {
-      "bytes": 22178,
+      "bytes": 21627,
       "path": "src/pyspace/core/r_measure_cismi.py",
-      "sha256": "ed7fa380bc0b800e2ea52ab77d289b114c894b7fe1f290b1770167a425bd862b"
+      "sha256": "32fa2f8ff065502e7caee10b080217353e7a01508bb57c7b2664376f9fcea249"
     },
     {
-      "bytes": 22657,
+      "bytes": 22141,
       "path": "src/pyspace/core/r_measure_transmi.py",
-      "sha256": "7a2c4cd585ed0dfe39552923f647868cbb2c444a9f24aafc0e73f8af9852a156"
+      "sha256": "e61c3fb2b4b6c9a86e8d7dfe295efcecfe103665cb4f80f05da18908facae316"
     },
     {
       "bytes": 4355,
@@ -361,19 +361,19 @@
       "sha256": "14b1e2fdf703c7adc0be483e592917b0a18a6f366bbf3f07649c1fe2b5c841ea"
     },
     {
-      "bytes": 16025,
+      "bytes": 16391,
       "path": "src/pyspace/core/spatial_stats_2d.py",
-      "sha256": "da6f9966aa1d24cd0718d4605096ee3cdabaa3e0bf1f052d28d507068af71990"
+      "sha256": "137b9ff3f19301ee6d84b0518356a21c0ae4b405ab7a5318ae498b60b5309a86"
     },
     {
-      "bytes": 9928,
+      "bytes": 9901,
       "path": "src/pyspace/core/spatial_stats_3d.py",
-      "sha256": "17aefdf1aded8d8ebe78628f3ec0e17d0289c6e94f8df41d21c64e9344bb01d6"
+      "sha256": "fb12e7a9aed8109065f88d27459d4ede4161c38373845ca1522b0692e550b359"
     },
     {
-      "bytes": 15760,
+      "bytes": 15689,
       "path": "src/pyspace/core/table_census.py",
-      "sha256": "da437fc5cf73551dee7be6a447fabe8cb240b02ad60bba6db5d602ef59d0139e"
+      "sha256": "c17f1de4f5ee8fcec946953e3feba7938937d425b7e61a755d58aa797e20a288"
     },
     {
       "bytes": 5888,
@@ -566,9 +566,9 @@
       "sha256": "b00480aee04aa15e8ffdd1feb32b56dd9c230b41e6c0d6cf11116d7182bad08e"
     },
     {
-      "bytes": 1177,
+      "bytes": 1509,
       "path": "tests/parity_cases.py",
-      "sha256": "96ba2141d55b044e74a09bd0de9c8d246bee8109713a5f00adc375f7bd3a8bdb"
+      "sha256": "ece79e6e0f60be9a5bd54a7370fd1ac64f60b2ef4b5d97783e0f0d720b08f92e"
     },
     {
       "bytes": 2102,
@@ -581,9 +581,9 @@
       "sha256": "80136c41c98292a90027b8cd174d0578981316eaaacfe714c96d6e1f774ada04"
     },
     {
-      "bytes": 11497,
+      "bytes": 11196,
       "path": "tests/test_core_parity.py",
-      "sha256": "6ec63ab2034a07c21585a290bd1fe76a5a15d5b6825bf70cfc01f532cfdb6802"
+      "sha256": "7ace64898a5ea66f1301badfe3325062cbee891bd37fd1113e47257b9aaf5b36"
     },
     {
       "bytes": 5953,
@@ -606,9 +606,9 @@
       "sha256": "06a7957dda1071168d419b267b364edf781874318d956741e2ac62db8af97f4a"
     },
     {
-      "bytes": 8067,
+      "bytes": 7766,
       "path": "tests/test_live_r_parity.py",
-      "sha256": "9b14ea51aed5f0830dbba150e3554c58463f4ecd0530dbcba12f2fe1006eec81"
+      "sha256": "3224cf3c62538ae4b0a033914c7daa1fafc0e65b2f6d0eec377ca184091b6bfa"
     },
     {
       "bytes": 2801,
@@ -686,9 +686,9 @@
       "sha256": "08dc7308df58f41be307b3cf9cb7b3e3d38544bc60b4452ce79727fbbe275541"
     },
     {
-      "bytes": 5501,
+      "bytes": 5949,
       "path": "tests/test_spatial_stats_extended.py",
-      "sha256": "7216875063f1da131809ff5fcb875ef260439483e7a09527589a6d3a3df89127"
+      "sha256": "a2be57fb79a578f6870daef3e04ed907b871039322b6b16e0b40cc0a4ba77401"
     },
     {
       "bytes": 8072,

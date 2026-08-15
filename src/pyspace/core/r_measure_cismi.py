@@ -72,7 +72,7 @@ def _round_census_array(
     return rounded
 
 
-def measure_cisMI(  # noqa: N802, PLR0913, PLR0917 - direct port of the pinned R export
+def measure_cisMI(  # noqa: PLR0913, PLR0917 - direct port of the pinned R export
     census: pd.DataFrame,
     patch_list: dict[str, Any] | None,
     depth: int,
@@ -439,7 +439,7 @@ def measure_cisMI(  # noqa: N802, PLR0913, PLR0917 - direct port of the pinned R
         result_df = pd.DataFrame(final_results)
 
         # Apply Benjamini-Hochberg correction
-        result_df["Padjust"] = _bh_adjust(result_df["Pvalue"].to_numpy())
+        result_df["Padjust"] = stats.false_discovery_control(result_df["Pvalue"].to_numpy(), method="bh")
 
         # R SPACE line 176-177: Reorder columns (variables first, then statistics)
         var_columns = [col for col in result_df.columns if col.startswith("V")]
@@ -487,25 +487,3 @@ def _r_entropy(ensemble_data: np.ndarray, b: int) -> float:
     entropy_val = -np.sum(probabilities * np.log2(probabilities))
 
     return float(entropy_val)
-
-
-def _bh_adjust(p_values: np.ndarray) -> np.ndarray:
-    """Benjamini-Hochberg FDR correction (matches R's p.adjust method='BH')."""
-    p = np.asarray(p_values, dtype=float)
-    m = p.size
-    if m == 0:
-        return p
-
-    order = np.argsort(p)
-    ranks = np.empty_like(order)
-    ranks[order] = np.arange(1, m + 1)
-
-    q = p * (m / ranks)
-
-    # Enforce monotone property from largest to smallest
-    q_sorted = q[order]
-    for i in range(m - 2, -1, -1):
-        q_sorted[i] = min(q_sorted[i], q_sorted[i + 1])
-    q[order] = q_sorted
-
-    return np.clip(q, 0.0, 1.0)

@@ -101,7 +101,7 @@ def _radius_key(value: float) -> str:
     return str(int(value)) if value.is_integer() else str(value)
 
 
-def census_image(  # noqa: C901, PLR0913 - mirrors the pinned public R contract plus explicit RNG controls
+def census_image(
     images: str | Path | Mapping[str, str | Path | np.ndarray],
     radii: float | Sequence[float] | Mapping[str | float, Sequence[float]],
     sample_size: int | Sequence[int],
