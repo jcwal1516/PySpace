@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use PySpace, cite this software and the original SPACE project."
+title: "PySpace: Python Spatial Patterning Analysis of Cellular Ensembles"
+type: software
+version: 0.1.0
+license: Apache-2.0
+repository-code: "https://github.com/jcwal1516/PySpace"
+authors:
+  - name: "PySpace contributors"
+references:
+  - type: software
+    title: "SPACE: Spatial Patterning Analysis of Cellular Ensembles"
+    authors:
+      - family-names: Schrom
+        given-names: Edward
+    repository-code: "https://github.com/eschrom/SPACE"
