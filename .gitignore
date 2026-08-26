@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.coverage
+coverage.json
+.hypothesis/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+htmlcov/
+site/
+
+# Local data and analysis output never belong in the public repository.
+*.geojson
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.svs
+*.tif
+*.tiff
+*.xlsx
+Clinical data*
+HETMA/
+IF_TMA/
+ModernPathology/
+TMA/
+outputs/
+results/

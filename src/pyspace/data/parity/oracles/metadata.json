@@ -1,0 +1,20 @@
+{
+  "upstream_repo": "eschrom/SPACE",
+  "upstream_commit": "94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8",
+  "license": "Apache-2.0",
+  "provenance": "Generated from synthetic inputs by scripts/generate_core_parity_oracles.R after sourcing the pinned upstream R files.",
+  "numeric_tolerance": 1e-10,
+  "fixtures": {
+    "utils.json": "1d0c233f4f9b78473849b1c1ad636425f796fd5b602a30a7770375a1251ed371",
+    "round_column.csv": "2529abfb858b2bda5a2370f5ef2eb25a8a619f3409a7fe8b3f8a086927e3e1cb",
+    "build_dist_2d.csv": "43ed582d4508ae8f6deeaa27fd7e6660d39d0dc097255d89521e85400e595520",
+    "smooth_dist_1d.csv": "dc5408bcd90c46a3c8048645f540fa909ea71cf968386d53b68e6e016ae118d4",
+    "smooth_dist_2d.csv": "ff27bfe6182db5f59f071feaebdcbf86e11f6804ad66c2cbec9e89858fef1e59",
+    "smooth_dist_2d_freq.csv": "430c1139ae136b74b10a812c24b133832a054653fd01bcd2c483b5c542361433",
+    "summarize_patches.csv": "799c84af309806ac74f77da15984d51d8570eae5ba4dc48b7a2d606bc3da096b",
+    "random_census.csv": "ea969016e4320978d9b6113ee931b956d987df718947ac041fd3e70286ecede2",
+    "census_table_r_style.csv": "ef839982300cbfd188b2da2bd87928e5c0c09be0b741b57c8812c39df71de9e0",
+    "cismi_1.1.csv": "e068b22dfb5f9876ff0df013f5bd3cdd6ca71b066177dff11771cf817dd88087",
+    "transmi_1.1.csv": "0e9d37fd04b095cab6165805b111d95c8ae37c978b88433026773d3b6fc148ad"
+  }
+}

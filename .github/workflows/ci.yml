@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    env:
+      MPLBACKEND: Agg
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: "3.11"
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: ubuntu-latest
+            python: "3.13"
+          - os: ubuntu-latest
+            python: "3.14"
+          - os: macos-latest
+            python: "3.11"
+          - os: macos-latest
+            python: "3.14"
+          - os: windows-latest
+            python: "3.11"
+          - os: windows-latest
+            python: "3.14"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m ruff format --check src tests scripts benchmarks examples
+      - run: python -m ruff check src tests scripts benchmarks examples
+      - if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+        run: python -m mypy src tests scripts benchmarks examples
+      - run: python -m pytest -q -m "not live_r" --cov=pyspace --cov-report=term-missing --cov-report=json:coverage.json
+      - run: python scripts/check_kernel_coverage.py coverage.json
+
+  distribution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - run: python scripts/inspect_distribution.py dist/*
+      - run: python scripts/smoke_test_wheel.py dist/*.whl

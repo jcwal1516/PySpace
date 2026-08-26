@@ -1,0 +1,196 @@
+{
+  "environment": {
+    "logical_cpus": 12,
+    "machine": "arm64",
+    "memory_bytes": 51539607552,
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "physical_cpus": 12,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "processor": "arm",
+    "python": "3.11.14 (main, Oct  9 2025, 16:16:55) [Clang 17.0.0 (clang-1700.3.19.1)]",
+    "r": "R version 4.5.2 (2025-10-31)"
+  },
+  "generated_at": "2026-08-04T02:10:15.072914+00:00",
+  "repetitions": 5,
+  "scenarios": [
+    {
+      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
+      "input_rows_or_items": 200,
+      "measured_r_over_python_ratio": 0.4105108000885353,
+      "name": "synthetic-distribution-small-matching",
+      "output_checksum": "b4e7094e4e85208d5e59c7390114493e2527bb5c299df915c558ccf7af14e9a1",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.00048719790065661074,
+      "python_samples_seconds": [
+        0.0005830666515976191,
+        0.00046486250357702374,
+        0.00048719790065661074,
+        0.0004509791499003768,
+        0.0004926104098558426
+      ],
+      "r_median_seconds": 0.0002,
+      "r_samples_seconds": [
+        0.000399999999999999,
+        0.0002,
+        0.00015,
+        0.0002,
+        0.00015
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
+      "input_rows_or_items": 200,
+      "measured_r_over_python_ratio": 0.4192909059283426,
+      "name": "synthetic-distribution-small-nonmatching",
+      "output_checksum": "3c9ab997215a2251a25d2f4e9213f12cddf48ec5c8e1fd64d7a9a9528a964b90",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.0004769957973621786,
+      "python_samples_seconds": [
+        0.0004930354072712362,
+        0.0004769957973621786,
+        0.00046276875073090193,
+        0.0005066291429102421,
+        0.0004765791585668921
+      ],
+      "r_median_seconds": 0.0002,
+      "r_samples_seconds": [
+        0.0004,
+        0.0002,
+        0.0002,
+        0.0002,
+        0.0002
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
+      "input_rows_or_items": 20000,
+      "measured_r_over_python_ratio": 1.4198777289783653,
+      "name": "synthetic-distribution-large-matching",
+      "output_checksum": "25f3169be8681518b7a3f928ddab60e05a1271c9d506ad4bc8a25ad7b84ab32c",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.0007747145951725543,
+      "python_samples_seconds": [
+        0.0007957499939948321,
+        0.0008018707972951234,
+        0.0007726771058514714,
+        0.0007635770947672426,
+        0.0007747145951725543
+      ],
+      "r_median_seconds": 0.0011,
+      "r_samples_seconds": [
+        0.0014,
+        0.00115,
+        0.0011,
+        0.0011,
+        0.00105
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Deterministic synthetic object/scalar abundance table.",
+      "input_rows_or_items": 20000,
+      "measured_r_over_python_ratio": 1.4962633997402053,
+      "name": "synthetic-distribution-large-nonmatching",
+      "output_checksum": "d4b0b04cdadee905cdf590cb4fbc8b8331c9636b410a11b27e3d1034004df266",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.0007685812539421022,
+      "python_samples_seconds": [
+        0.0007685812539421022,
+        0.0007516958517953754,
+        0.0007549625006504357,
+        0.0008119541453197598,
+        0.0007949562510475517
+      ],
+      "r_median_seconds": 0.00115,
+      "r_samples_seconds": [
+        0.0015,
+        0.00115,
+        0.0012,
+        0.00115,
+        0.00115
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Runtime-only inst/doc/CEN_table.Rdata from the pinned Apache-2.0 upstream; reviewed SHA-256 bbd5e6763049bdd9eb372d99dd8ff07a65b51a89df734b6f44553e9137e87fa4; 18 numeric SPACE census columns and no identifier column.",
+      "input_rows_or_items": 11763,
+      "measured_r_over_python_ratio": 1.379418463054523,
+      "name": "upstream-tutorial-census-distribution",
+      "output_checksum": "b3f32c99b449802abb854b9e93e678a9b7e9487a88dfded250ca9aef070ea16c",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.0007974374922923744,
+      "python_samples_seconds": [
+        0.0007890125038102269,
+        0.0008117020945064724,
+        0.0007974374922923744,
+        0.0008097770507447422,
+        0.000776491651777178
+      ],
+      "r_median_seconds": 0.0011,
+      "r_samples_seconds": [
+        0.0014,
+        0.0011,
+        0.00115,
+        0.0011,
+        0.0011
+      ],
+      "timed_operations_per_sample": 20
+    },
+    {
+      "input_provenance": "Synthetic radius batch; identical ordered vectors in R and Python.",
+      "input_rows_or_items": 200,
+      "measured_r_over_python_ratio": 2.486246512251419,
+      "name": "synthetic-volume-batch-serial",
+      "output_checksum": "427caa6742a25f76a2d1ea9b66df939f959f59b47c40fd58577d37149c9a82c2",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.007642041891813278,
+      "python_samples_seconds": [
+        0.007872791029512882,
+        0.007408999837934971,
+        0.007618292002007365,
+        0.007642041891813278,
+        0.007690417114645243
+      ],
+      "r_median_seconds": 0.019,
+      "r_samples_seconds": [
+        0.021,
+        0.019,
+        0.019,
+        0.019,
+        0.019
+      ],
+      "timed_operations_per_sample": 1
+    },
+    {
+      "input_provenance": "Synthetic radius batch; identical ordered vectors in R and Python.",
+      "input_rows_or_items": 200,
+      "measured_r_over_python_ratio": 0.9246132425300961,
+      "name": "synthetic-volume-batch-process",
+      "output_checksum": "427caa6742a25f76a2d1ea9b66df939f959f59b47c40fd58577d37149c9a82c2",
+      "parity_verified_before_timing": true,
+      "python_median_seconds": 0.010815332876518369,
+      "python_samples_seconds": [
+        0.01084054191596806,
+        0.042275333078578115,
+        0.010815332876518369,
+        0.010457958094775677,
+        0.010784124955534935
+      ],
+      "r_median_seconds": 0.01,
+      "r_samples_seconds": [
+        0.013,
+        0.01,
+        0.011,
+        0.01,
+        0.01
+      ],
+      "timed_operations_per_sample": 1
+    }
+  ],
+  "schema": "pyspace-r-python-benchmark",
+  "schema_version": 1,
+  "upstream_space_commit": "94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8"
+}

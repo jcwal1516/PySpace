@@ -1,0 +1,127 @@
+{
+  "files": [
+    {
+      "bytes": 49,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/build_dist_2d.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "43ed582d4508ae8f6deeaa27fd7e6660d39d0dc097255d89521e85400e595520"
+    },
+    {
+      "bytes": 51,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/census_table_r_style.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "ef839982300cbfd188b2da2bd87928e5c0c09be0b741b57c8812c39df71de9e0"
+    },
+    {
+      "bytes": 104,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/cismi_1.1.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "e068b22dfb5f9876ff0df013f5bd3cdd6ca71b066177dff11771cf817dd88087"
+    },
+    {
+      "bytes": 1346,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/metadata.json",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "cfc57652f0eb761a509e7ed913a819e7947ad123ff8dd971ab4ca28c008f1cab"
+    },
+    {
+      "bytes": 31,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/random_census.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "ea969016e4320978d9b6113ee931b956d987df718947ac041fd3e70286ecede2"
+    },
+    {
+      "bytes": 86,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/round_column.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "2529abfb858b2bda5a2370f5ef2eb25a8a619f3409a7fe8b3f8a086927e3e1cb"
+    },
+    {
+      "bytes": 96,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/smooth_dist_1d.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "dc5408bcd90c46a3c8048645f540fa909ea71cf968386d53b68e6e016ae118d4"
+    },
+    {
+      "bytes": 163,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/smooth_dist_2d.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "ff27bfe6182db5f59f071feaebdcbf86e11f6804ad66c2cbec9e89858fef1e59"
+    },
+    {
+      "bytes": 119,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/smooth_dist_2d_freq.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "430c1139ae136b74b10a812c24b133832a054653fd01bcd2c483b5c542361433"
+    },
+    {
+      "bytes": 76,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/summarize_patches.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "799c84af309806ac74f77da15984d51d8570eae5ba4dc48b7a2d606bc3da096b"
+    },
+    {
+      "bytes": 901,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/transmi_1.1.csv",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "0e9d37fd04b095cab6165805b111d95c8ae37c978b88433026773d3b6fc148ad"
+    },
+    {
+      "bytes": 120,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/oracles/utils.json",
+      "provenance": "Synthetic oracle generated from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8 with scripts/generate_core_parity_oracles.R.",
+      "sha256": "1d0c233f4f9b78473849b1c1ad636425f796fd5b602a30a7770375a1251ed371"
+    },
+    {
+      "bytes": 93,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/random_plans.json",
+      "provenance": "Hand-authored synthetic random plan shared by R and Python parity tests.",
+      "sha256": "11b08ce19b0a90d362bd66d8ea89833c8fc9c7d5a6d83a2b744974e9ab435a3b"
+    },
+    {
+      "bytes": 41,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/upstream/COMMIT",
+      "provenance": "Verbatim metadata from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8.",
+      "sha256": "082f1c8c987f52a4c75ac9184953d16d873a69b4ee1fe5800a255d536e23b719"
+    },
+    {
+      "bytes": 551,
+      "contains_identifiers": false,
+      "license": "Apache-2.0",
+      "path": "parity/upstream/NAMESPACE",
+      "provenance": "Verbatim metadata from eschrom/SPACE commit 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8.",
+      "sha256": "0b22fbd7b57b45bb8244823188a729e6dbbc1fc570912da2c7664b73c8cebee2"
+    }
+  ],
+  "schema": "pyspace-packaged-data",
+  "schema_version": 1,
+  "upstream_space_commit": "94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8"
+}

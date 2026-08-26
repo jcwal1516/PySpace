@@ -1,0 +1,45 @@
+name: Live R parity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-r:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: eschrom/SPACE
+          ref: 94f0a0f9311e2ee2b406ebc45c84a4e93f2f38f8
+          path: r-space
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: r-lib/actions/setup-r@d3c5be51b12e724e68f33216ca3c148b66d5f0b6 # v2
+      - uses: r-lib/actions/setup-r-dependencies@d3c5be51b12e724e68f33216ca3c148b66d5f0b6 # v2
+        with:
+          packages: |
+            any::abind
+            any::digest
+            any::doParallel
+            any::dplyr
+            any::FNN
+            any::foreach
+            any::igraph
+            any::jsonlite
+            any::memuse
+            any::plyr
+            any::purrr
+            any::stringr
+            any::tidyr
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -q tests/test_live_r_parity.py
+        env:
+          SPACE_R_REPO: ${{ github.workspace }}/r-space
