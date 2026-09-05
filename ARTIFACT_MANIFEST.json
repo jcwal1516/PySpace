@@ -6,9 +6,9 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     {
-      "bytes": 197,
+      "bytes": 278,
       "path": ".github/dependabot.yml",
-      "sha256": "dbca43d3a012b92e911cf3cf6734b721a7f5c0040b4883c12af59bb29deb5ec3"
+      "sha256": "7defbaa8bb83d9274702c07d9f83915a96e571c9c87520ffdee321e2863b8e31"
     },
     {
       "bytes": 2102,
@@ -26,9 +26,9 @@
       "sha256": "88b41a87b3029a70169a999860fa9c41f0ff2be751c14d23ee0ca0e01558b649"
     },
     {
-      "bytes": 1719,
+      "bytes": 1729,
       "path": ".github/workflows/security.yml",
-      "sha256": "6a1762ca7b6c7fb7aafcb2952f3e1e10b326228e9155b5a6c29326f58b694d9d"
+      "sha256": "9375e85a35342be8d0306246504c914345534efb98cc7ddc35307184b639dd69"
     },
     {
       "bytes": 354,
@@ -46,9 +46,9 @@
       "sha256": "76ab31d14d2890d75b71e8ca28840bfce47e3dadea46285fcf5b051deb24a2f3"
     },
     {
-      "bytes": 454,
+      "bytes": 829,
       "path": "CONTRIBUTING.md",
-      "sha256": "7552a679d6c2b21a070163005ca824a305d9d934e58a0680c441fb1038892cf2"
+      "sha256": "a3cc2b13affe03da925ac61fde9317942c5f1ef797278e093deaea8b7efd96f3"
     },
     {
       "bytes": 5575,
@@ -576,9 +576,9 @@
       "sha256": "24b08598bf17a004f998b4d1389924ad21e150377f11af3419e6bccd162d20d7"
     },
     {
-      "bytes": 6988,
+      "bytes": 7580,
       "path": "tests/test_release_artifacts.py",
-      "sha256": "14016cb8634356ff3a9f647e425f90c16daf0932d568f008bd3d9c6e74ef44bf"
+      "sha256": "ad1853edb2f4b2ae13476cdbc1848967529727cdd69d79df7401723816c2d4db"
     },
     {
       "bytes": 2105,

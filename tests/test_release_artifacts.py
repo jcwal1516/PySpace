@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import runpy
 import tomllib
 from pathlib import Path
@@ -174,3 +175,13 @@ def test_dependency_inventory_check_is_declaration_based_and_requires_resolution
     document["entries"][0]["license"] = None
     inventory.write_text(json.dumps(document), encoding="utf-8")
     assert any("resolved version or license" in finding for finding in validate_inventory(pyproject, inventory))
+
+
+def test_codeql_actions_share_a_pin_and_dependabot_update_group() -> None:
+    workflow = (ROOT / ".github" / "workflows" / "security.yml").read_text(encoding="utf-8")
+    pins = re.findall(r"uses: github/codeql-action/(?:init|analyze)@([0-9a-f]{40})", workflow)
+    assert len(pins) == 2
+    assert pins[0] == pins[1]
+    dependabot = (ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8")
+    actions = dependabot.split("package-ecosystem: github-actions", 1)[1]
+    assert 'groups:\n      codeql:\n        patterns:\n          - "github/codeql-action/*"' in actions
