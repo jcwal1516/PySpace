@@ -185,3 +185,13 @@ def test_codeql_actions_share_a_pin_and_dependabot_update_group() -> None:
     dependabot = (ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8")
     actions = dependabot.split("package-ecosystem: github-actions", 1)[1]
     assert 'groups:\n      codeql:\n        patterns:\n          - "github/codeql-action/*"' in actions
+
+
+def test_r_actions_share_a_pin_and_dependabot_update_group() -> None:
+    workflow = (ROOT / ".github" / "workflows" / "live-r-parity.yml").read_text(encoding="utf-8")
+    pins = re.findall(r"uses: r-lib/actions/(?:setup-r|setup-r-dependencies)@([0-9a-f]{40})", workflow)
+    assert len(pins) == 2
+    assert pins[0] == pins[1]
+    dependabot = (ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8")
+    actions = dependabot.split("package-ecosystem: github-actions", 1)[1]
+    assert 'r-actions:\n        patterns:\n          - "r-lib/actions/*"' in actions

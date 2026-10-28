@@ -17,7 +17,8 @@ When changing release files, including GitHub workflows, regenerate
 `ARTIFACT_MANIFEST.json` with `python scripts/write_artifact_manifest.py`
 and include it in the same change. Dependabot updates need this regeneration
 before they can pass the artifact audit. Keep the CodeQL `init` and `analyze`
-actions pinned to the same commit; Dependabot groups their updates together.
+actions pinned to the same commit, and do the same for the R setup actions;
+Dependabot groups each pair so their updates remain compatible.
 
 Do not commit clinical data, raw images, annotations, manuscripts, generated study
 results, credentials, caches, or compiled files.

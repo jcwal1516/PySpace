@@ -6,29 +6,29 @@
       "sha256": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c"
     },
     {
-      "bytes": 278,
+      "bytes": 343,
       "path": ".github/dependabot.yml",
-      "sha256": "7defbaa8bb83d9274702c07d9f83915a96e571c9c87520ffdee321e2863b8e31"
+      "sha256": "5a19730ffc21edc0a18d7dc6bb0effe782484538dc802a5193dd678be58ff368"
     },
     {
       "bytes": 2102,
       "path": ".github/workflows/ci.yml",
-      "sha256": "8fdd56472ee9800848997ba859d36edabe6040155f8c7bea379a22888dec7a00"
+      "sha256": "8423420baa2dee020d7d466c82240d2eb2f32895bf6f041a400481967a78c082"
     },
     {
       "bytes": 663,
       "path": ".github/workflows/community.yml",
-      "sha256": "ae399976f66556d23cdde0c8861aca05e25f4a682fa4d82bce509d0f0e164dab"
+      "sha256": "792e90f2e0056e927a0613a48b547ed3f8d57b6b3948a3b884c46b847cffdf1f"
     },
     {
-      "bytes": 1302,
+      "bytes": 1312,
       "path": ".github/workflows/live-r-parity.yml",
-      "sha256": "88b41a87b3029a70169a999860fa9c41f0ff2be751c14d23ee0ca0e01558b649"
+      "sha256": "0e7012063a1fecae2a76c9adc2d1933851b406dad9ff5a465c1a5cde3e979b75"
     },
     {
       "bytes": 1729,
       "path": ".github/workflows/security.yml",
-      "sha256": "9375e85a35342be8d0306246504c914345534efb98cc7ddc35307184b639dd69"
+      "sha256": "059d832dbcfbb6bf9bbd0c157be32d7ece10d439ff35c3880b0022f59a8c619c"
     },
     {
       "bytes": 354,
@@ -46,9 +46,9 @@
       "sha256": "76ab31d14d2890d75b71e8ca28840bfce47e3dadea46285fcf5b051deb24a2f3"
     },
     {
-      "bytes": 829,
+      "bytes": 892,
       "path": "CONTRIBUTING.md",
-      "sha256": "a3cc2b13affe03da925ac61fde9317942c5f1ef797278e093deaea8b7efd96f3"
+      "sha256": "19cc2fc56cab1bb6c742e9ed3699ea6e0da9d7526a907dc523597743c0db9453"
     },
     {
       "bytes": 5575,
@@ -576,9 +576,9 @@
       "sha256": "24b08598bf17a004f998b4d1389924ad21e150377f11af3419e6bccd162d20d7"
     },
     {
-      "bytes": 7580,
+      "bytes": 8152,
       "path": "tests/test_release_artifacts.py",
-      "sha256": "ad1853edb2f4b2ae13476cdbc1848967529727cdd69d79df7401723816c2d4db"
+      "sha256": "99ea9ed1e2f14a06783fe6845b145c710a402148c79d49671dd4b5f6f61a05f3"
     },
     {
       "bytes": 2105,
