@@ -23,12 +23,12 @@
     {
       "bytes": 1312,
       "path": ".github/workflows/live-r-parity.yml",
-      "sha256": "0e7012063a1fecae2a76c9adc2d1933851b406dad9ff5a465c1a5cde3e979b75"
+      "sha256": "f3a7d430fb5ffba938784314eb1943e608007dd91b557a5181828e5cb5db1cfc"
     },
     {
       "bytes": 1729,
       "path": ".github/workflows/security.yml",
-      "sha256": "059d832dbcfbb6bf9bbd0c157be32d7ece10d439ff35c3880b0022f59a8c619c"
+      "sha256": "8f3ac2fceb8bf92418a3dc85cb4fa8dd493161f9f17232dadf01a55a55b9943d"
     },
     {
       "bytes": 354,
